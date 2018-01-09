@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  quorum:
+    image: "final_single_node:v1"
+    ports:
+      - "50401:50401" # raft port
+      - "22000:22000" # rpc port
+      - "21000:21000" # port
+    volumes:
+      - /home/shanlin/work-dir/tmp_try/docker_quorum/target:/node1
+    working_dir: /node1
+    command:
+      bash start.sh
